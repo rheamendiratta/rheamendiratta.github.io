@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Guide v2 — Rhea Mendiratta</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-primary: #FDFAF6;
+    --bg-secondary: #F5F0E8;
+    --bg-card: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5C5C5C;
+    --text-tertiary: #8A8A8A;
+
+    /* Primary accent — Indigo / Neel */
+    --accent: #4A5899;
+    --accent-hover: #3A4578;
+    --accent-soft: #4A589915;
+    --accent-medium: #4A589928;
+
+    /* Secondary accents — Spice tags */
+    --saffron: #D4952A;
+    --saffron-soft: #D4952A15;
+    --saffron-hover: #B87D1E;
+    --gulabi: #B5485A;
+    --gulabi-soft: #B5485A15;
+    --gulabi-hover: #943A4A;
+    --haldi: #7A803C;
+    --haldi-soft: #7A803C15;
+    --haldi-hover: #636828;
+
+    --border: #E8E2D8;
+    --border-light: #F0EBE3;
+    --tag-bg: #F0EBE3;
+    --tag-text: #5C5C5C;
+    --code-bg: #F5F0E8;
+    --shadow-sm: 0 1px 3px rgba(26,26,26,0.04);
+    --shadow-md: 0 4px 16px rgba(26,26,26,0.06);
+    --shadow-lg: 0 8px 32px rgba(26,26,26,0.08);
+    --doodle-color: #4A5899;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #141210;
+    --bg-secondary: #1E1C18;
+    --bg-card: #1E1C18;
+    --text-primary: #F0EBE3;
+    --text-secondary: #A89F93;
+    --text-tertiary: #6B6358;
+
+    --accent: #7B8AD0;
+    --accent-hover: #99A5E0;
+    --accent-soft: #7B8AD015;
+    --accent-medium: #7B8AD025;
+
+    --saffron: #E8AD4A;
+    --saffron-soft: #E8AD4A15;
+    --saffron-hover: #F0C060;
+    --gulabi: #D4687A;
+    --gulabi-soft: #D4687A15;
+    --gulabi-hover: #E48090;
+    --haldi: #9AA04E;
+    --haldi-soft: #9AA04E15;
+    --haldi-hover: #B0B860;
+
+    --border: #2E2A24;
+    --border-light: #252220;
+    --tag-bg: #2E2A24;
+    --tag-text: #A89F93;
+    --code-bg: #1E1C18;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
+    --doodle-color: #7B8AD0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.65;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+
+  .theme-toggle {
+    position: fixed; top: 24px; right: 24px; z-index: 100;
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1.5px solid var(--border); background: var(--bg-card);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 18px; box-shadow: var(--shadow-sm); transition: all 0.3s ease;
+  }
+  .theme-toggle:hover { box-shadow: var(--shadow-md); transform: scale(1.05); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 80px 32px 120px; }
+
+  /* Header */
+  .header { margin-bottom: 80px; position: relative; }
+  .header-label {
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Instrument Serif', serif; font-size: 52px; font-weight: 400;
+    line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px;
+  }
+  .header h1 em { font-style: italic; color: var(--accent); }
+  .header p { font-size: 17px; color: var(--text-secondary); max-width: 640px; line-height: 1.7; }
+
+  .doodle { position: absolute; opacity: 0.6; }
+  .doodle-star { right: -20px; top: 10px; width: 48px; height: 48px; }
+  .doodle-squiggle { left: -40px; bottom: -10px; width: 60px; height: 24px; }
+
+  /* Sections */
+  .section { margin-bottom: 72px; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 32px; padding-bottom: 12px; border-bottom: 1.5px solid var(--border);
+  }
+  .section-number { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); font-weight: 500; }
+  .section-title { font-family: 'Instrument Serif', serif; font-size: 28px; font-weight: 400; }
+
+  /* Color Palette */
+  .palette-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .color-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .color-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .color-swatch { height: 72px; width: 100%; }
+  .color-info { padding: 12px; background: var(--bg-card); }
+  .color-name { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+  .color-hex { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-tertiary); }
+  .color-role { font-size: 11px; color: var(--text-tertiary); margin-top: 4px; }
+
+  .palette-label {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-tertiary);
+    margin-bottom: 16px; margin-top: 32px;
+  }
+
+  /* Typography */
+  .type-specimen {
+    margin-bottom: 40px; padding: 32px; background: var(--bg-secondary);
+    border-radius: 12px; border: 1px solid var(--border-light);
+  }
+  .type-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  }
+  .type-sample-serif { font-family: 'Instrument Serif', serif; font-size: 42px; line-height: 1.2; margin-bottom: 8px; }
+  .type-sample-sans { font-family: 'DM Sans', sans-serif; font-size: 17px; color: var(--text-secondary); line-height: 1.65; }
+  .type-sample-mono {
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--text-secondary);
+    background: var(--code-bg); padding: 16px; border-radius: 8px; border: 1px solid var(--border-light);
+  }
+  .type-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-tertiary); margin-top: 12px; }
+
+  .type-scale { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+  .scale-row { display: flex; align-items: baseline; gap: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+  .scale-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-tertiary); min-width: 100px; flex-shrink: 0; }
+  .scale-sample { font-family: 'Instrument Serif', serif; }
+  .scale-h1 { font-size: 48px; line-height: 1.1; }
+  .scale-h2 { font-size: 32px; line-height: 1.2; }
+  .scale-h3 { font-size: 24px; line-height: 1.3; }
+  .scale-body { font-family: 'DM Sans', sans-serif; font-size: 17px; }
+  .scale-small { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-secondary); }
+  .scale-caption { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-tertiary); }
+
+  /* Components */
+  .component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 640px) { .component-grid { grid-template-columns: 1fr; } }
+
+  .project-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease; cursor: pointer;
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .project-card-image {
+    height: 160px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .project-card-image svg { opacity: 0.3; }
+  .project-card-body { padding: 20px; }
+  .project-card-title { font-family: 'Instrument Serif', serif; font-size: 20px; margin-bottom: 6px; }
+  .project-card-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px;
+    background: var(--tag-bg); color: var(--tag-text); border-radius: 4px;
+  }
+  .tag-saffron { background: var(--saffron-soft); color: var(--saffron); }
+  .tag-gulabi { background: var(--gulabi-soft); color: var(--gulabi); }
+  .tag-haldi { background: var(--haldi-soft); color: var(--haldi); }
+  .tag-neel { background: var(--accent-soft); color: var(--accent); }
+
+  /* Writing Card */
+  .writing-card {
+    display: flex; gap: 20px; padding: 20px; background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; align-items: flex-start;
+  }
+  .writing-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .writing-date { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-tertiary); min-width: 80px; padding-top: 3px; }
+  .writing-content h3 { font-family: 'Instrument Serif', serif; font-size: 19px; font-weight: 400; margin-bottom: 4px; }
+  .writing-content p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+  .writing-category { font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-top: 8px; }
+
+  /* Buttons */
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .btn {
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+    padding: 10px 24px; border-radius: 8px; border: none; cursor: pointer;
+    transition: all 0.2s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--text-primary); border: 1.5px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-ghost { background: transparent; color: var(--accent); padding: 10px 4px; }
+  .btn-ghost:hover { text-decoration: underline; }
+
+  /* Nav Demo */
+  .nav-demo {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 28px; background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; margin-top: 16px;
+  }
+  .nav-name { font-family: 'Instrument Serif', serif; font-size: 20px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links li a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+  .nav-links li a:hover { color: var(--accent); }
+  .nav-links li a.active { color: var(--accent); font-weight: 500; }
+
+  /* Sitemap */
+  .sitemap { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+  .sitemap-item { padding: 20px; background: var(--bg-secondary); border-radius: 10px; border: 1px solid var(--border-light); transition: border-color 0.2s ease; }
+  .sitemap-item:hover { border-color: var(--accent); }
+  .sitemap-page { font-family: 'Instrument Serif', serif; font-size: 18px; margin-bottom: 6px; }
+  .sitemap-desc { font-size: 13px; color: var(--text-tertiary); line-height: 1.45; }
+
+  /* Easter Eggs */
+  .easter-eggs {
+    padding: 28px; background: var(--accent-soft); border: 1.5px dashed var(--accent); border-radius: 12px;
+  }
+  .easter-eggs h3 { font-family: 'Instrument Serif', serif; font-size: 20px; margin-bottom: 12px; color: var(--accent); }
+  .easter-eggs p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 8px; }
+
+  /* Spacing */
+  .spacing-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+  .spacing-row { display: flex; align-items: center; gap: 16px; }
+  .spacing-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-tertiary); min-width: 60px; }
+  .spacing-bar { height: 12px; background: var(--accent-medium); border-radius: 3px; border: 1px solid var(--accent); }
+  .spacing-value { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-tertiary); }
+
+  /* Notes */
+  .note {
+    padding: 16px 20px; background: var(--accent-soft); border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0; font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-top: 16px;
+  }
+
+  /* Principles */
+  .principles { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 8px; }
+  @media (max-width: 640px) { .principles { grid-template-columns: 1fr; } }
+  .principle { padding: 24px; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-light); }
+  .principle-icon { font-size: 28px; margin-bottom: 12px; }
+  .principle h3 { font-family: 'Instrument Serif', serif; font-size: 19px; margin-bottom: 8px; font-weight: 400; }
+  .principle p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+  /* Color System Explainer */
+  .color-system { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .color-role-row { display: flex; gap: 16px; align-items: flex-start; }
+  .color-role-swatch { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; border: 1px solid var(--border-light); }
+  .color-role-info { flex: 1; }
+  .color-role-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+  .color-role-hex { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-tertiary); }
+  .color-role-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-top: 4px; }
+
+  /* Tag Demo */
+  .tag-demo { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding: 20px; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-light); }
+
+  .footer-note {
+    margin-top: 100px; padding-top: 32px; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-tertiary); font-size: 13px;
+  }
+  .footer-note a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="toggle" title="Toggle dark mode">☀️</button>
+
+<div class="container">
+
+  <div class="header">
+    <div class="header-label">Style Guide — v2</div>
+    <h1>Rhea Mendiratta's <em>Website</em></h1>
+    <p>A design system built on warm neutrals, an indigo primary accent, and three warm "spice" colors that mark content categories — research, code, and ideas. Minimal and editorial at its core, with hand-drawn doodles and hidden easter eggs.</p>
+    <svg class="doodle doodle-star" viewBox="0 0 48 48" fill="none">
+      <path d="M24 4 L28 18 L42 18 L31 27 L35 42 L24 33 L13 42 L17 27 L6 18 L20 18 Z" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="doodle doodle-squiggle" viewBox="0 0 60 24" fill="none">
+      <path d="M3 12 C10 4, 17 20, 24 12 C31 4, 38 20, 45 12 C52 4, 57 16, 57 12" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- 01 Design Principles -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Design Principles</h2>
+    </div>
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-icon">✦</div>
+        <h3>Clarity First</h3>
+        <p>Every element earns its place. Active voice, low jargon, generous whitespace. If it doesn't help the reader, remove it.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">✺</div>
+        <h3>Warm Precision</h3>
+        <p>Analytical rigor meets human warmth. The indigo accent, serif headings, and soft backgrounds signal approachability without sacrificing sharpness.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">✿</div>
+        <h3>Delightful Details</h3>
+        <p>Hand-drawn doodles in margins, hover micro-interactions, and hidden easter eggs reward exploration. The site should make visitors smile.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Color System -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Color System</h2>
+    </div>
+    <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 15px;">A warm neutral base with an indigo primary accent and three warm "spice" colors for content categories. Toggle dark mode (top right) to see both palettes adapt.</p>
+
+    <div class="palette-label">Base Palette</div>
+    <div class="palette-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FDFAF6;"></div>
+        <div class="color-info">
+          <div class="color-name">Parchment</div>
+          <div class="color-hex">#FDFAF6</div>
+          <div class="color-role">Primary background</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #F5F0E8;"></div>
+        <div class="color-info">
+          <div class="color-name">Linen</div>
+          <div class="color-hex">#F5F0E8</div>
+          <div class="color-role">Secondary / cards</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #1A1A1A;"></div>
+        <div class="color-info">
+          <div class="color-name">Ink</div>
+          <div class="color-hex">#1A1A1A</div>
+          <div class="color-role">Primary text</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #5C5C5C;"></div>
+        <div class="color-info">
+          <div class="color-name">Stone</div>
+          <div class="color-hex">#5C5C5C</div>
+          <div class="color-role">Secondary text</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Primary Accent — Neel (Indigo)</div>
+    <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">Used for nav active states, links, buttons, CTAs, doodle strokes, section numbers, and the favicon. This is the color visitors remember.</p>
+    <div class="palette-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background: var(--accent-soft);"></div>
+        <div class="color-info">
+          <div class="color-name">Neel Soft</div>
+          <div class="color-hex">8% opacity</div>
+          <div class="color-role">Backgrounds / hovers</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: var(--accent-medium);"></div>
+        <div class="color-info">
+          <div class="color-name">Neel Medium</div>
+          <div class="color-hex">16% opacity</div>
+          <div class="color-role">Card gradients</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: var(--accent);"></div>
+        <div class="color-info">
+          <div class="color-name">Neel</div>
+          <div class="color-hex">#4A5899</div>
+          <div class="color-role">Primary accent</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: var(--accent-hover);"></div>
+        <div class="color-info">
+          <div class="color-name">Neel Deep</div>
+          <div class="color-hex">#3A4578</div>
+          <div class="color-role">Hover / pressed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Secondary Accents — Spice Tags</div>
+    <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 14px;">Each spice color owns a content category. They appear primarily on tags, category labels, and section markers — never competing with the indigo primary.</p>
+
+    <div class="color-system">
+      <div class="color-role-row">
+        <div class="color-role-swatch" style="background: var(--saffron);"></div>
+        <div class="color-role-info">
+          <div class="color-role-name">Kesar (Saffron)</div>
+          <div class="color-role-hex">#D4952A &nbsp;→&nbsp; dark: #E8AD4A</div>
+          <div class="color-role-desc">Education & research — Teach For India, NAS analysis, policy work. The "scholar" signal.</div>
+        </div>
+      </div>
+      <div class="color-role-row">
+        <div class="color-role-swatch" style="background: var(--gulabi);"></div>
+        <div class="color-role-info">
+          <div class="color-role-name">Gulabi (Deep Rose)</div>
+          <div class="color-role-hex">#B5485A &nbsp;→&nbsp; dark: #D4687A</div>
+          <div class="color-role-desc">Behavioral science & social impact — experiments, interventions, program design. The "human" signal.</div>
+        </div>
+      </div>
+      <div class="color-role-row">
+        <div class="color-role-swatch" style="background: var(--haldi);"></div>
+        <div class="color-role-info">
+          <div class="color-role-name">Haldi (Olive)</div>
+          <div class="color-role-hex">#7A803C &nbsp;→&nbsp; dark: #9AA04E</div>
+          <div class="color-role-desc">Code & tools — Rails, R, Python, ArcGIS, dev diaries. The "builder" signal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Tag System in Action</div>
+    <div class="tag-demo">
+      <span class="tag tag-saffron">Education</span>
+      <span class="tag tag-saffron">Teach For India</span>
+      <span class="tag tag-saffron">Policy</span>
+      <span class="tag tag-gulabi">Behavioral Science</span>
+      <span class="tag tag-gulabi">Social Impact</span>
+      <span class="tag tag-gulabi">RCT</span>
+      <span class="tag tag-haldi">Rails</span>
+      <span class="tag tag-haldi">R</span>
+      <span class="tag tag-haldi">Python</span>
+      <span class="tag tag-haldi">ArcGIS</span>
+      <span class="tag tag-neel">Data Analysis</span>
+      <span class="tag">UChicago</span>
+      <span class="tag">Parenting</span>
+    </div>
+
+    <div class="note" style="margin-top: 20px;">
+      <strong>The spice rack rule:</strong> On any given screen, you see indigo plus at most one or two spice colors on tags. The base palette does the heavy lifting; the spices are seasoning, not the main dish. Neutral tags (gray) are for categories that don't fit a spice.
+    </div>
+  </div>
+
+  <!-- 03 Typography -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Typography</h2>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-label">Display / Headings → Instrument Serif</div>
+      <div class="type-sample-serif">Policy, Behavior & Data</div>
+      <div class="type-meta">Instrument Serif — Regular & Italic &nbsp;·&nbsp; Google Fonts &nbsp;·&nbsp; Free</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-label">Body / UI → DM Sans</div>
+      <div class="type-sample-sans">Rhea Mendiratta is a policy researcher and graduate student with a strong interest in education, behavioral science, and data-driven decision-making. She combines analytical rigor with practical problem-solving.</div>
+      <div class="type-meta">DM Sans — 300 to 700 weights &nbsp;·&nbsp; Google Fonts &nbsp;·&nbsp; Free</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-label">Code / Tags / Metadata → JetBrains Mono</div>
+      <div class="type-sample-mono">Ruby on Rails &nbsp;·&nbsp; R &nbsp;·&nbsp; Python &nbsp;·&nbsp; ArcGIS Pro</div>
+      <div class="type-meta">JetBrains Mono — 400, 500 &nbsp;·&nbsp; Google Fonts &nbsp;·&nbsp; Free</div>
+    </div>
+
+    <div class="type-scale">
+      <div class="scale-row">
+        <span class="scale-label">H1 — 48px</span>
+        <span class="scale-sample scale-h1">Education & Policy</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">H2 — 32px</span>
+        <span class="scale-sample scale-h2">Research Projects</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">H3 — 24px</span>
+        <span class="scale-sample scale-h3">Behavioral Insights</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">Body — 17px</span>
+        <span class="scale-sample scale-body">Exploring how complex systems can be made more accessible and effective.</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">Small — 14px</span>
+        <span class="scale-sample scale-small">Published in March 2026</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">Caption — 12px</span>
+        <span class="scale-sample scale-caption">BEHAVIORAL SCIENCE · DATA · POLICY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Site Structure -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Site Structure</h2>
+    </div>
+    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 15px;">Inspired by Ratik's clean single-page flow with dedicated sub-pages. The nav stays minimal — everything reachable in one click.</p>
+
+    <div class="nav-demo">
+      <div class="nav-name">Rhea Mendiratta</div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Writing</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="sitemap" style="margin-top: 24px;">
+      <div class="sitemap-item">
+        <div class="sitemap-page">Home</div>
+        <div class="sitemap-desc">Hero intro + selected projects + recent writing + quick about. Single scroll.</div>
+      </div>
+      <div class="sitemap-item">
+        <div class="sitemap-page">Projects</div>
+        <div class="sitemap-desc">Cards with spice-colored tags. Filterable by category: research, code, tools.</div>
+      </div>
+      <div class="sitemap-item">
+        <div class="sitemap-page">Writing</div>
+        <div class="sitemap-desc">Blog posts, research notes, podcast episodes. Chronological with category tags.</div>
+      </div>
+      <div class="sitemap-item">
+        <div class="sitemap-page">About</div>
+        <div class="sitemap-desc">Bio, photo, resume/CV link, contact info, social links. Personal but concise.</div>
+      </div>
+      <div class="sitemap-item">
+        <div class="sitemap-page">/now</div>
+        <div class="sitemap-desc">A living notebook — what you're working on, reading, exploring. Updates monthly.</div>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top: 20px;">
+      <strong>The /now page</strong> is your creative home base move — a living notebook that gives visitors a reason to come back. It replaces the "what I'm exploring next" section from your Notion site with something more dynamic.
+    </div>
+  </div>
+
+  <!-- 05 Components -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Components</h2>
+    </div>
+
+    <div class="palette-label" style="margin-top: 0;">Project Cards</div>
+    <div class="component-grid">
+      <div class="project-card">
+        <div class="project-card-image" style="background: linear-gradient(135deg, var(--saffron-soft), #D4952A20);">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="18" stroke="var(--saffron)" stroke-width="2"/><path d="M30 18v24M18 30h24" stroke="var(--saffron)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/></svg>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">NAS 2021 Analysis</div>
+          <div class="project-card-desc">Extracting and analyzing India's National Achievement Survey data for education policy insights.</div>
+          <div class="tags">
+            <span class="tag tag-saffron">Education</span>
+            <span class="tag tag-haldi">R</span>
+            <span class="tag">Data Viz</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-image" style="background: linear-gradient(135deg, var(--haldi-soft), #7A803C20);">
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><rect x="8" y="8" width="44" height="44" rx="8" stroke="var(--haldi)" stroke-width="2"/><path d="M20 30h20M30 20v20" stroke="var(--haldi)" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-title">Rasoi</div>
+          <div class="project-card-desc">A social recipe management app with warm Indian aesthetics, built with Ruby on Rails.</div>
+          <div class="tags">
+            <span class="tag tag-haldi">Rails</span>
+            <span class="tag tag-haldi">PostgreSQL</span>
+            <span class="tag">Devise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Writing Entries</div>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="writing-card">
+        <div class="writing-date">Mar 2026</div>
+        <div class="writing-content">
+          <h3>On Making Research Accessible</h3>
+          <p>How behavioral science can help bridge the gap between academic findings and classroom practice.</p>
+          <div class="writing-category" style="color: var(--gulabi);">behavioral science · education</div>
+        </div>
+      </div>
+      <div class="writing-card">
+        <div class="writing-date">Feb 2026</div>
+        <div class="writing-content">
+          <h3>Building Rasoi: A Dev Diary</h3>
+          <p>Lessons from building a recipe app with Rails, Devise, and a whole lot of Indian spice.</p>
+          <div class="writing-category" style="color: var(--haldi);">code · project</div>
+        </div>
+      </div>
+      <div class="writing-card">
+        <div class="writing-date">Jan 2026</div>
+        <div class="writing-content">
+          <h3>Lame-Duck Policy Challenge</h3>
+          <p>Reflections on being a finalist at the Institute of Politics policy competition.</p>
+          <div class="writing-category" style="color: var(--saffron);">policy · UChicago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-label">Buttons</div>
+    <div class="btn-row">
+      <button class="btn btn-primary">View Project →</button>
+      <button class="btn btn-secondary">Download CV</button>
+      <button class="btn btn-ghost">Read more →</button>
+    </div>
+
+    <div class="palette-label">Spacing Tokens</div>
+    <div class="spacing-grid">
+      <div class="spacing-row">
+        <span class="spacing-label">xs</span>
+        <div class="spacing-bar" style="width: 4px;"></div>
+        <span class="spacing-value">4px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-label">sm</span>
+        <div class="spacing-bar" style="width: 8px;"></div>
+        <span class="spacing-value">8px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-label">md</span>
+        <div class="spacing-bar" style="width: 16px;"></div>
+        <span class="spacing-value">16px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-label">lg</span>
+        <div class="spacing-bar" style="width: 32px;"></div>
+        <span class="spacing-value">32px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-label">xl</span>
+        <div class="spacing-bar" style="width: 64px;"></div>
+        <span class="spacing-value">64px</span>
+      </div>
+      <div class="spacing-row">
+        <span class="spacing-label">2xl</span>
+        <div class="spacing-bar" style="width: 96px;"></div>
+        <span class="spacing-value">96px</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 Doodles & Easter Eggs -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Doodles & Easter Eggs</h2>
+    </div>
+
+    <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 15px;">The playful layer that makes this site unmistakably yours. Doodles always use the indigo primary — they're the unifying thread across pages. They should feel hand-drawn and imperfect.</p>
+
+    <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; padding: 28px; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-light);">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4 L28 18 L42 18 L31 27 L35 42 L24 33 L13 42 L17 27 L6 18 L20 18 Z" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="60" height="24" viewBox="0 0 60 24" fill="none"><path d="M3 12 C10 4, 17 20, 24 12 C31 4, 38 20, 45 12 C52 4, 57 16, 57 12" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="14" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/></svg>
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 20 Q14 6 20 20 Q26 34 32 20" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4 L18 14 L28 16 L18 18 L16 28 L14 18 L4 16 L14 14 Z" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="48" height="20" viewBox="0 0 48 20" fill="none"><path d="M4 16 L12 6 L20 14 L28 4 L36 12 L44 6" stroke="var(--doodle-color)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div class="easter-eggs">
+      <h3>Easter Egg Ideas</h3>
+      <p>☆ <strong>Konami code:</strong> Entering ↑↑↓↓←→←→BA reveals a hidden "fun facts" panel about you.</p>
+      <p>☆ <strong>Hover doodles:</strong> Section headings sprout small hand-drawn flourishes on hover — a tiny star, a squiggle underline, a flower.</p>
+      <p>☆ <strong>Cursor trail:</strong> A subtle sparkle or small dot trail follows the cursor on the home page — gentle, not distracting.</p>
+      <p>☆ <strong>404 page:</strong> A full-character illustration with a message like "This page wandered off to get chai. Try going home?"</p>
+      <p>☆ <strong>Click the accent dot:</strong> The indigo dot in the nav, when clicked, cycles through the four accent colors (neel → kesar → gulabi → haldi) as a little color demo.</p>
+      <p>☆ <strong>Secret /uses page:</strong> A list of tools, apps, and gear you use daily — discoverable only through the footer or a hidden link.</p>
+    </div>
+  </div>
+
+  <!-- 07 Implementation Notes -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Implementation Notes</h2>
+    </div>
+
+    <div class="type-specimen" style="background: var(--bg-secondary);">
+      <div class="type-label">Recommended Stack</div>
+      <div class="type-sample-sans" style="margin-bottom: 16px;">
+        <strong>Next.js</strong> or <strong>Astro</strong> — both support static generation, dark mode, and MDX for blog posts. Astro is lighter if you want pure content; Next.js gives you more room to grow if you add interactive features.
+      </div>
+      <div class="type-sample-mono" style="font-size: 13px; line-height: 1.7;">
+Framework: &nbsp; Next.js 14+ or Astro 4+<br>
+Styling: &nbsp;&nbsp;&nbsp; Tailwind CSS + CSS variables<br>
+Content: &nbsp;&nbsp;&nbsp; MDX for blog posts<br>
+Fonts: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Google Fonts (self-hosted for perf)<br>
+Deploy: &nbsp;&nbsp;&nbsp;&nbsp; Vercel (free tier is plenty)<br>
+Doodles: &nbsp;&nbsp;&nbsp; SVG inline, animated with CSS<br>
+Dark mode: &nbsp; CSS custom properties + JS toggle
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Color system implementation:</strong> Define all four accent colors as CSS variables. The spice colors only need two variants each (full + soft/transparent). Use a data attribute or class on project/writing cards to set the category, and let CSS handle the tag coloring. This keeps the markup clean and the colors easy to update.
+    </div>
+
+    <div class="note" style="margin-top: 12px;">
+      <strong>Performance:</strong> Self-host fonts for speed. Keep doodle SVGs inline so they respond to the --doodle-color variable. Lazy-load project card images. Target under 100KB total CSS+JS for instant loads.
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Style guide for <a href="#">rheamendiratta.com</a> &nbsp;·&nbsp; Designed March 2026 &nbsp;·&nbsp; v2
+  </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+  const body = document.body;
+  const toggle = document.getElementById('toggle');
+  if (body.getAttribute('data-theme') === 'dark') {
+    body.removeAttribute('data-theme');
+    toggle.textContent = '☀️';
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    toggle.textContent = '🌙';
+  }
+}
+</script>
+
+</body>
+</html>

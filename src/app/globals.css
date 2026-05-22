@@ -449,7 +449,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .card-title {
   font-family: var(--font-serif);
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 400;
   margin-bottom: 8px;
   color: var(--text-primary);

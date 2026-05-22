@@ -16,6 +16,7 @@
   --accent-medium: rgba(74, 88, 153, 0.16);
   --sidebar-start: #141628;
   --sidebar-end: #1c1f42;
+  --sidebar-accent: #a8b3e8;
 
   --saffron: #D4952A;
   --saffron-soft: rgba(212, 149, 42, 0.08);
@@ -48,6 +49,7 @@
   --accent-medium: rgba(212, 149, 42, 0.16);
   --sidebar-start: #18120a;
   --sidebar-end: #241808;
+  --sidebar-accent: #e8c47a;
 }
 
 [data-accent="gulabi"] {
@@ -57,6 +59,7 @@
   --accent-medium: rgba(181, 72, 90, 0.16);
   --sidebar-start: #1a0c0f;
   --sidebar-end: #27101a;
+  --sidebar-accent: #e08898;
 }
 
 [data-accent="haldi"] {
@@ -66,6 +69,7 @@
   --accent-medium: rgba(122, 128, 60, 0.16);
   --sidebar-start: #111608;
   --sidebar-end: #1a2010;
+  --sidebar-accent: #b0b860;
 }
 
 /* ─── Reset ─── */
@@ -281,8 +285,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .sidebar-icon-link:hover {
-  border-color: rgba(168, 179, 232, 0.6);
-  color: #a8b3e8;
+  border-color: var(--sidebar-accent);
+  color: var(--sidebar-accent);
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -306,8 +310,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .sidebar-resume-btn:hover {
-  border-color: rgba(168, 179, 232, 0.6);
-  color: #a8b3e8;
+  border-color: var(--sidebar-accent);
+  color: var(--sidebar-accent);
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -330,7 +334,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .sidebar-bio a {
-  color: #a8b3e8;
+  color: var(--sidebar-accent);
   text-decoration: underline;
   text-decoration-color: rgba(168, 179, 232, 0.25);
   text-underline-offset: 3px;
@@ -349,7 +353,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .sidebar-bio a:hover {
-  text-decoration-color: #a8b3e8;
+  text-decoration-color: var(--sidebar-accent);
 }
 
 .sidebar-bio a:hover::after {

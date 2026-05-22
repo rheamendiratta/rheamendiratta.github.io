@@ -6,7 +6,7 @@ export function Sidebar() {
       <div className="sidebar-links">
         {/* LinkedIn */}
         <a
-          href="#"
+          href="https://www.linkedin.com/in/rheamendiratta/"
           className="sidebar-icon-link"
           aria-label="LinkedIn"
           target="_blank"
@@ -19,7 +19,7 @@ export function Sidebar() {
 
         {/* Email */}
         <a
-          href="mailto:rheam@uchicago.edu"
+          href="mailto:rhea.mendiratta@gmail.com"
           className="sidebar-icon-link"
           aria-label="Email"
         >
@@ -42,7 +42,7 @@ export function Sidebar() {
           </svg>
         </a>
 
-        <a href="#" className="sidebar-resume-btn">
+        <a href="https://drive.google.com/file/d/1rlZo5NALptkHpZZYQhPtsq7eJmUl3WWl/view?usp=sharing" className="sidebar-resume-btn" target="_blank" rel="noopener noreferrer">
           Download CV ↗
         </a>
       </div>
@@ -56,9 +56,8 @@ export function Sidebar() {
         </p>
         <p>
           I began my journey as a Math and Science teacher supporting middle school students 
-          in an underserved community in Ahmedabad, Gujarat, with <a href="https://www.teachforindia.org/">Teach For India. </a> 
-           I then conducted research, designed programs, and evaluated impact at <a href="https://www.mantra4change.org/">Mantra Social 
-          Services.</a> I worked with government stakeholders and non-profit teams to build 
+          in an underserved community in Ahmedabad, Gujarat, with <a href="https://www.teachforindia.org/" target="_blank" rel="noopener noreferrer">Teach For India.</a>{' '}
+          I then conducted research, designed programs, and evaluated impact at <a href="https://www.mantra4change.org/" target="_blank" rel="noopener noreferrer">Mantra Social Services.</a> I worked with government stakeholders and non-profit teams to build 
           scalable education solutions and contributed to a social enterprise.
         </p>
         <p>

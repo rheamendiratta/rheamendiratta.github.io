@@ -13,8 +13,8 @@ export function Hero() {
           </h1>
           <p>
             — and I design solutions to solve educational challenges, with a focus on enriching
-            learning experiences for children. I have 5 years of experience in education in
-            India, including teaching, research, and program design at scale. I&apos;m currently a <a href="https://harris.uchicago.edu/news-events/news/student-profile-rhea-mendiratta-mpp-class-2026" target="_blank" rel="noopener noreferrer">Public Policy student at the University of Chicago.</a>
+            learning experiences for children. I have 5 years of experience in the education sector in
+            India, including teaching, research, program design and implementation at scale. I&apos;m currently a <a href="https://harris.uchicago.edu/news-events/news/student-profile-rhea-mendiratta-mpp-class-2026" target="_blank" rel="noopener noreferrer">Public Policy student at the University of Chicago.</a>
           </p>
         </div>
       </div>

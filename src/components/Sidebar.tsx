@@ -51,17 +51,17 @@ export function Sidebar() {
 
       <div className="sidebar-bio">
         <p>
-          I thrive in high-challenge environments. I bring curiosity, compassion, and analytical 
-          thinking to create <b>sustainable impact in the education sector.</b>
+          I thrive in high-challenge environments. I bring curiosity, innovation and analytical 
+          thinking with compassion to create <b>sustainable impact in the education sector.</b>
         </p>
         <p>
           I began my journey as a Math and Science teacher supporting middle school students 
           in an underserved community in Ahmedabad, Gujarat, with <a href="https://www.teachforindia.org/" target="_blank" rel="noopener noreferrer">Teach For India.</a>{' '}
           I then conducted research, designed programs, and evaluated impact at <a href="https://www.mantra4change.org/" target="_blank" rel="noopener noreferrer">Mantra Social Services.</a> I worked with government stakeholders and non-profit teams to build 
-          scalable education solutions and contributed to a social enterprise.
+          scalable education solutions for urban and rural public schools at National, State and District levels, and contributed to a social enterprise.
         </p>
         <p>
-          Outside of education and systems, I enjoy cooking, exploring records of space 
+          Beyond education and systems, I enjoy cooking, exploring records of space 
           and deep-sea expeditions, and lately, building apps.
         </p>
         <p>

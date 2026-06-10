@@ -3,7 +3,7 @@ export function Hero() {
     <section className="hero" aria-label="Introduction">
       <div className="hero-inner">
         <div className="hero-photo">
-          <img src="/Rhea2.PNG" alt="Rhea Mendiratta" />
+          <img src="/Rhea2.JPG" alt="Rhea Mendiratta" />
           <div className="hero-photo-ring" aria-hidden="true" />
         </div>
 

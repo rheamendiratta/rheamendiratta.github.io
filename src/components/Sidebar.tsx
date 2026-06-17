@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const bioRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setIsOpen(false); };
@@ -15,6 +16,30 @@ export function Sidebar() {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
+
+  useEffect(() => {
+    const bio = bioRef.current;
+    if (!bio) return;
+
+    const update = () => {
+      if (window.innerWidth <= 900) {
+        bio.style.opacity = '';
+        bio.style.filter = '';
+        return;
+      }
+      const progress = Math.min(window.scrollY / window.innerHeight, 1);
+      bio.style.opacity = String(0.25 + progress * 0.75);
+      bio.style.filter = `blur(${(1 - progress) * 5}px)`;
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, []);
 
   return (
     <>
@@ -86,7 +111,7 @@ export function Sidebar() {
 
         <div className="sidebar-divider" />
 
-        <div className="sidebar-bio">
+        <div className="sidebar-bio" ref={bioRef}>
           <p>
             I thrive in high-challenge environments. I bring curiosity, innovation and analytical
             thinking with compassion to create <b>sustainable impact in the education sector.</b>

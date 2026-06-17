@@ -12,9 +12,7 @@ export function Hero() {
             Hi! I&apos;m <em>Rhea</em>
           </h1>
           <p>
-            — and I design solutions to solve educational challenges, with a focus on enriching
-            learning experiences for children. I have 5 years of experience in the education sector in
-            India, including teaching, research, program design and implementation at scale. I have
+            — and I design solutions to hard educational challenges, with a focus on enabling joyful learning experiences for children. I have 5 years of experience in the education sector in India, including teaching, research, program design and implementation at scale. I have
             just graduated with a <a href="https://harris.uchicago.edu/news-events/news/student-profile-rhea-mendiratta-mpp-class-2026" target="_blank" rel="noopener noreferrer">Master of Public Policy degree from the University of Chicago.</a>
           </p>
         </div>

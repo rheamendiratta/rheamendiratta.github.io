@@ -100,7 +100,7 @@ export function Sidebar() {
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1rlZo5NALptkHpZZYQhPtsq7eJmUl3WWl/view?usp=sharing"
+            href="https://drive.google.com/file/d/1pVd5OZkDvqpidOwT4tUq1-WFAKheEfkt/view?usp=sharing"
             className="sidebar-resume-btn"
             target="_blank"
             rel="noopener noreferrer"

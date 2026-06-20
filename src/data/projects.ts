@@ -42,7 +42,7 @@ export const projects: Project[] = [
     note: 'in progress',
     tags: ['Education', 'Research & Data'],
     color: 'saffron',
-    externalLink: 'https://rheamendiratta.github.io/india-edu-site.github.io/world/',
+    externalLink: 'https://youtu.be/V5sEuagdPxo?si=bGjw88lTf_QZZQFb',
   },
   {
     id: 'data-analysis-r',

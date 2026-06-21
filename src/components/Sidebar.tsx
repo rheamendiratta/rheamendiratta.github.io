@@ -105,7 +105,7 @@ export function Sidebar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Download CV ↗
+            Download CV
           </a>
         </div>
 

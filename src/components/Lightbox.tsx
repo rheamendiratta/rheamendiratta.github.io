@@ -113,7 +113,7 @@ export function Lightbox({ project, onClose }: Props) {
               <iframe src={project.pdfLink} title={`${project.title} PDF`} />
               <div className="lightbox-pdf-bar">
                 <a href={project.pdfLink} download className="btn-secondary">
-                  Download PDF ↓
+                  Download PDF
                 </a>
               </div>
             </div>
@@ -128,7 +128,7 @@ export function Lightbox({ project, onClose }: Props) {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  {project.externalLinkLabel ?? 'View Project →'}
+                  {project.externalLinkLabel ?? 'View Project'}
                 </a>
               )}
               {project.spotifyLink && (
@@ -138,7 +138,7 @@ export function Lightbox({ project, onClose }: Props) {
                   rel="noopener noreferrer"
                   className="btn-spotify"
                 >
-                  Listen on Spotify ↗
+                  Listen on Spotify
                 </a>
               )}
               {project.githubLink && (
@@ -148,7 +148,7 @@ export function Lightbox({ project, onClose }: Props) {
                   rel="noopener noreferrer"
                   className="btn-secondary"
                 >
-                  GitHub ↗
+                  GitHub
                 </a>
               )}
             </div>

@@ -88,7 +88,7 @@ export const projects: Project[] = [
       },
     ],
     externalLink: 'https://youtube.com/playlist?list=PLa_4M_7MRsGxbspv3bT1s6c5ZCg9PYmeX&si=pUeOVnoPoGXDjvEK',
-    externalLinkLabel: 'Watch on YouTube ↗',
+    externalLinkLabel: 'Watch on YouTube',
     spotifyLink: 'https://open.spotify.com/show/2Yv5ABwndbUfBbSN7lBsNw?si=ncNkqhzQQzOJDyvVJVpczQ',
   },
   {
@@ -116,7 +116,7 @@ export const projects: Project[] = [
       },
     ],
     externalLink: 'https://drive.google.com/file/d/1ihPH8dLFgzL3sPzeO32CqxScmsmsrjFn/view?usp=drive_link',
-    externalLinkLabel: 'Read the full proposal →',
+    externalLinkLabel: 'Read the full proposal',
   },
   {
     id: 'program-evaluation-sample',
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     tags: ['With Ideas'],
     color: 'haldi',
     externalLink: 'https://colabglobal.org/kalaburagis-stint-with-enabling-enriching-learning-experiences-at-scale/',
-    externalLinkLabel: 'Read on Colab ↗',
+    externalLinkLabel: 'Read on Colab',
   },
   {
     id: 'mentoring-in-education',
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     tags: ['With Ideas'],
     color: 'haldi',
     externalLink: 'https://colabglobal.org/does-mentoring-in-the-education-sector-make-sense/',
-    externalLinkLabel: 'Read on Colab ↗',
+    externalLinkLabel: 'Read on Colab',
   },
   {
     id: 'project-based-learning',
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     color: 'saffron',
     pdfLink: '/Project_Based_Learning_Session_Flow.pdf',
     externalLink: 'https://docs.google.com/spreadsheets/d/1rM2InAkSQ-zO_xSIIpdOo9T1pYNGgSqQ/edit?usp=sharing&ouid=111563359665911472402&rtpof=true&sd=true',
-    externalLinkLabel: 'Access a sample lesson plan for students ↗',
+    externalLinkLabel: 'Access a sample lesson plan for students',
   },
   {
     id: 'project-vatsalya',
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     tags: ['With People'],
     color: 'saffron',
     externalLink: 'https://www.youtube.com/watch?v=vECJg5qILX4',
-    externalLinkLabel: 'Watch the journey on YouTube ↗',
+    externalLinkLabel: 'Watch the journey on YouTube',
   },
   {
     id: 'math-masters',
@@ -224,7 +224,7 @@ export const projects: Project[] = [
     tags: ['With People'],
     color: 'saffron',
     externalLink: 'https://www.youtube.com/channel/UCK5XTvG39vDSF0dVLqASiwg/videos',
-    externalLinkLabel: 'Watch on YouTube ↗',
+    externalLinkLabel: 'Watch on YouTube',
   },
   {
     id: 'social-impact-strategy',

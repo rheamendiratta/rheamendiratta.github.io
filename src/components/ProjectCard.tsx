@@ -1,9 +1,9 @@
 import type { Project, Tag } from '@/data/projects';
 
 const TAG_COLOR: Record<Tag, string> = {
-  'Education': 'saffron',
-  'Research & Data': 'haldi',
-  'Social Impact': 'gulabi',
+  'With People': 'saffron',
+  'With Data': 'gulabi',
+  'With Ideas': 'haldi',
 };
 
 interface Props {

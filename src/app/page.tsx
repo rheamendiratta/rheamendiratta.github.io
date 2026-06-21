@@ -11,9 +11,9 @@ import type { Project, FilterTag } from '@/data/projects';
 
 const FILTER_LABELS: Record<FilterTag, string> = {
   all: 'All',
-  'Education': 'Education',
-  'Research & Data': 'Research & Data',
-  'Social Impact': 'Social Impact',
+  'With People': 'With People',
+  'With Data': 'With Data',
+  'With Ideas': 'With Ideas',
 };
 
 export default function Home() {
